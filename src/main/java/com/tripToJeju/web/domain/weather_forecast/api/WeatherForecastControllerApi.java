@@ -1,0 +1,10 @@
+package com.tripToJeju.web.domain.weather_forecast.api;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class WeatherForecastControllerApi {
+
+	
+
+}
