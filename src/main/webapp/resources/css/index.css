@@ -201,44 +201,9 @@
 }
 
 #weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo .tciGrade svg {
-    width: 70px;
+    width: 60px;
+    margin: 3px 0;
 }
-
-
-/* #weeklyWeatherPop #popContents {
-    width: 80%;
-}
-
-#weeklyWeatherPop #popContents #weatherInfoWrapper {
-    display: flex;
-}
-
-#weeklyWeatherPop #popContents #weeklyWeatherTitle {
-    height: 4rem;
-    font-size: 1.3rem;
-    font-weight: 900;
-    line-height: 4rem;
-}
-
-#weeklyWeatherPop #popContents .weatherInfo {
-    height: 3rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 3rem;
-}
-
-#weeklyWeatherPop #popContents .weatherInfo:nth-child(2n + 2) {
-    background-color: rgb(18, 140, 186);
-    color: white;
-}
-
-#weeklyWeatherPop #popContents .weatherInfo span {
-    margin-right: 200px;
-}
-
-#weeklyWeatherPop #popContents .weatherInfo span:last-child {
-    margin-right: 0;
-} */
 
 #weeklyWeatherPop #popContents #closePop {
     -webkit-appearance: none;

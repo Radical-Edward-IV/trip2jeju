@@ -28,32 +28,50 @@
 }
 
 #mainSection .article .userInfoWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid grey;
 }
 
-#mainSection .article .userInfo{
+#mainSection .article .userInfoWrapper .userInfo{
     display: table;
     padding: 8px 0 20px;
 }
 
-#mainSection .article .userInfo .avatar {
+#mainSection .article .userInfoWrapper .userInfo .avatar {
     display: table-cell;
     padding-right: 16px;
     vertical-align: top;
 }
 
-#mainSection .article .userInfo .avatar img {
+#mainSection .article .userInfoWrapper .userInfo .avatar img {
     border-radius: 50%;
     width: 40px;
     height: 40px;
 }
 
-#mainSection .article .userInfo .userNameAndhits {
+#mainSection .article .userInfoWrapper .userInfo .userNameAndhits {
     display: table-cell;
     vertical-align: middle;
     overflow: hidden;
     line-height: 1.2;
     text-align: left;
+}
+
+#mainSection .article .userInfoWrapper .reviewButtonSet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainSection .article .userInfoWrapper .reviewButtonSet div {
+    margin-left: 10px;
+}
+
+#mainSection .article .userInfoWrapper .delReviewWrapper .delReview svg,
+#mainSection .article .userInfoWrapper .modifyReviewWrapper .modifyReview svg {
+    width: 30px;
 }
 
 #mainSection .article .boardPhotoAndTxtArea {
@@ -159,6 +177,53 @@
 #icon svg {
     width: 50px;
     margin-right: 30px;
+}
+
+.replys {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    border: 1px solid #ced4da;
+    border-radius: 3px 3px 0 0;
+}
+
+.replys .replyWrapper {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #ddd;
+}
+
+.replys .replyWrapper .reply {
+    width: 75%;
+}
+
+.replys .replyWrapper .reply textarea {
+    width: 95%;
+    max-width: 95%;
+}
+
+.replys .replyWrapper .replyUserInfo {
+    width: 12%;
+    font-size: .8rem;
+    color: grey;
+}
+
+.replys .replyWrapper .replyDate {
+    width: 7%;
+    font-size: .8rem;
+    color: grey;
+}
+
+.replys .replyWrapper .replyButtonSet {
+    display: flex;
+    justify-content: space-evenly;
+    width: 6%;
+}
+
+.replys .replyWrapper .replyButtonSet svg {
+    width: 15px;
 }
 
 #writingForm .writing_wrapper form .bnt_set input,
