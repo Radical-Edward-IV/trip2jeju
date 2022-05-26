@@ -10,6 +10,7 @@ public class VisitJejuDTO {
 	String addr;
 	String tel;
 	String photoDesc;
+	String thumbnail;
 	String photoPath;
 	String region1;
 	String region2;
@@ -38,6 +39,10 @@ public class VisitJejuDTO {
 
 	public String getPhotoDesc() {
 		return photoDesc;
+	}
+
+	public String getThumbnail() {
+		return thumbnail;
 	}
 
 	public String getPhotoPath() {
@@ -78,6 +83,10 @@ public class VisitJejuDTO {
 
 	public void setPhotoDesc(String photoDesc) {
 		this.photoDesc = photoDesc;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
 	}
 
 	public void setPhotoPath(String photoPath) {
