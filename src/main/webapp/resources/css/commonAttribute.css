@@ -1,0 +1,25 @@
+/**********************
+    Common Attribute
+***********************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "NanumSquare", sans-serif;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}

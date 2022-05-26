@@ -1,0 +1,262 @@
+@import url(./commonAttribute.css);
+@import url(./headerFooter.css);
+
+
+
+/*****************************
+    Page Main Section start
+******************************/
+#mainSection {
+    padding-top: 80px;
+}
+
+/* Subtitle start */
+#mainSection #subTitle {
+    margin-top: 3.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#mainSection #subTitle p {
+    margin-top: .5rem;
+    color: #333;
+}
+
+/* City Selection button start */
+#mainSection #selectCity {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+#mainSection #selectCity button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    display: inline-block;
+    width: 110px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(18, 140, 186);
+    color: white;
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+}
+
+#mainSection #selectCity button:hover {
+    cursor: pointer;
+}
+
+/* Sights Information start */
+#mainSection #sightsWrapper {
+    display: grid;
+    grid-auto-rows: 350px;
+    grid-template-columns: repeat(4, 260px);
+    gap: 3rem;
+    justify-content: center;
+    margin: 1.5rem 0 4rem;
+}
+
+#mainSection #sightsWrapper .sights {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 30%);
+}
+
+#mainSection #sightsWrapper .sights:hover {
+    cursor: pointer;
+}
+
+#mainSection #sightsWrapper .sights .sightsImg img {
+    width: 260px;
+    height: 180px;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+#mainSection #sightsWrapper .sights .sightsTitle {
+    padding: .5rem .5rem 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#mainSection #sightsWrapper .sights .weatherIcon {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 7px .5rem;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+#mainSection #sightsWrapper .sights .weatherIcon svg {
+    width: 60px;
+}
+
+#mainSection #sightsWrapper .sights .weatherInfo {
+    padding: 0 .3rem;
+    text-align: center;
+    font-size: .9rem;
+    color: grey;
+}
+
+
+
+/******************
+    Pop-up start
+*******************/
+#weeklyWeatherPop {
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,.5);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size:0;
+    text-align:center;
+}
+
+#weeklyWeatherPop:after {
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+    content:''
+}
+
+#weeklyWeatherPop #popContents {
+    display:inline-block;
+    max-width: 900px;
+    min-width: 500px;
+    border-radius: 15px;
+    padding:20px 30px;
+    background:#fff;
+    vertical-align:middle;
+    font-size:15px;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #popSightsImg img {
+    width: 550px;
+    height: 300px;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #popSightsTitle {
+    margin: 5px 0 0;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #addrTel span {
+    margin-right: 30px;
+    color: #333;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #addrTel span:last-child {
+    margin-right: 0;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #popSightsDesc {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 1.1rem;
+}
+
+#weeklyWeatherPop #popContents #popSightsInfoWrapper #sightsTags span {
+    margin-right: 20px;
+    color: rgb(18, 140, 186);
+    font-weight: 900;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 10px;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo {
+    width: 100%;
+    padding: 10px 0;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo:nth-child(2n + 1) {
+    background-color: rgb(18, 140, 186);
+    color: white;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo:nth-child(2n + 2) {
+    border-top: 1px solid rgb(18, 140, 186);
+    border-bottom: 1px solid rgb(18, 140, 186);
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo .week {
+    font-weight: 550;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper .weatherInfo .tciGrade svg {
+    width: 70px;
+}
+
+
+/* #weeklyWeatherPop #popContents {
+    width: 80%;
+}
+
+#weeklyWeatherPop #popContents #weatherInfoWrapper {
+    display: flex;
+}
+
+#weeklyWeatherPop #popContents #weeklyWeatherTitle {
+    height: 4rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    line-height: 4rem;
+}
+
+#weeklyWeatherPop #popContents .weatherInfo {
+    height: 3rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 3rem;
+}
+
+#weeklyWeatherPop #popContents .weatherInfo:nth-child(2n + 2) {
+    background-color: rgb(18, 140, 186);
+    color: white;
+}
+
+#weeklyWeatherPop #popContents .weatherInfo span {
+    margin-right: 200px;
+}
+
+#weeklyWeatherPop #popContents .weatherInfo span:last-child {
+    margin-right: 0;
+} */
+
+#weeklyWeatherPop #popContents #closePop {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin-top: 20px;
+    width: auto;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: grey;
+    color: white;
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+}

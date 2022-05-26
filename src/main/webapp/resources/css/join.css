@@ -1,0 +1,95 @@
+@import url(./commonAttribute.css);
+
+/*******************************
+    Common Attribute Override
+********************************/
+body {
+    height: 100%;
+    min-height: 100%;
+    color: #767676;
+    background-color: #ececee;
+}
+
+
+
+/*************************
+    Join Section start
+**************************/
+#loginWrapper {
+    max-width: 700px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #fff;
+    text-align: center;
+}
+
+#loginWrapper #logo a {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+#loginWrapper #logo a img {
+    width: 70%;
+}
+
+input[id^="user_"] {
+    width: 70%;
+    height: 3rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+input[id^="user_Tel"] {
+    width: 18.5%;
+}
+
+#tel span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#gender,
+#age {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 70%;
+    height: 3rem;
+    margin: 0 auto 1.2rem;
+    border-bottom: 1px solid #ced4da;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#gender span,
+#gender input,
+#age span,
+#age input {
+    margin-left: 15px;
+}
+
+#join {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 70%;
+    height: 3.5rem;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: rgb(18, 140, 186);
+    color: white;
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+}

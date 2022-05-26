@@ -1,0 +1,190 @@
+@import url(./commonAttribute.css);
+@import url(./headerFooter.css);
+
+#mainSection {
+    padding: 120px 0 40px;
+}
+
+#mainSection #writingFormBntWrapper {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+#mainSection .article {
+    width: 70%;
+    min-width: 800px;
+    margin: 70px auto;
+}
+
+#mainSection .article:nth-child(2) {
+    margin-top: 0 !important;
+}
+
+#mainSection .article .articleTitle {
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+}
+
+#mainSection .article .userInfoWrapper {
+    border-bottom: 1px solid grey;
+}
+
+#mainSection .article .userInfo{
+    display: table;
+    padding: 8px 0 20px;
+}
+
+#mainSection .article .userInfo .avatar {
+    display: table-cell;
+    padding-right: 16px;
+    vertical-align: top;
+}
+
+#mainSection .article .userInfo .avatar img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+#mainSection .article .userInfo .userNameAndhits {
+    display: table-cell;
+    vertical-align: middle;
+    overflow: hidden;
+    line-height: 1.2;
+    text-align: left;
+}
+
+#mainSection .article .boardPhotoAndTxtArea {
+    padding: 22px 0;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+#mainSection .article .photo {
+    text-align: center;
+}
+
+#mainSection .article .photo img {
+    width: 100%;
+}
+
+#mainSection .article .txt {
+    padding: 5px 0;
+    font-size: 1.1rem;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+#mainSection .textAreaBlock {
+    padding: 16px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 3px;
+    text-align: right;
+}
+
+#mainSection .textAreaBlock textarea {
+    width: 100%;
+    border: none;
+    outline-style: none;
+    resize: none;
+    overflow-y: hidden !important;
+    padding: 0;
+    background: transparent;
+    vertical-align: top;
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 12px;
+    min-height: 62px;
+}
+
+#writingForm {
+    position:fixed;
+    top:0; left:0; right:0; bottom:0;
+    background:rgba(0,0,0,.5);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size:0;
+    text-align:center;
+}
+
+#writingForm:after {
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+    content:''
+}
+
+#writingForm .writing_wrapper {
+    display:inline-block;
+    max-width: 900px;
+    min-width: 500px;
+    border-radius: 15px;
+    padding:20px 30px;
+    background:#fff;
+    vertical-align:middle;
+    font-size:15px;
+}
+
+#writingForm .writing_wrapper form input[type="text"] {
+    width: 100%;
+    height: 4rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 0.5rem;
+    font-size: 3rem;
+    font-weight: 700;
+    outline: none;
+}
+
+#writingForm .writing_wrapper form .textAreaBlock {
+    text-align: right;
+}
+
+#writingForm .writing_wrapper form .textAreaBlock textarea {
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    outline-style: none;
+    resize: none;
+    overflow-y: hidden !important;
+    padding: 10px;
+    background: transparent;
+    vertical-align: top;
+    border-radius: 3px 3px 0 0;
+    margin-bottom: 12px;
+    min-height: 62px;
+}
+
+#icon svg {
+    width: 50px;
+    margin-right: 30px;
+}
+
+#writingForm .writing_wrapper form .bnt_set input,
+#writingForm .writing_wrapper form .bnt_set button,
+.replySubmit, #writingFormBntWrapper #writingFormBnt {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    margin-top: 20px;
+    width: auto;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    background-color: grey;
+    color: white;
+
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+}
+
+#writingFormBntWrapper #writingFormBnt {
+    background-color: rgb(18, 140, 186);
+    font-size: 1.2rem;
+}
