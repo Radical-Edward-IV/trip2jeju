@@ -29,11 +29,11 @@ public class JDBCTest {
 
 	@Test
 	public void jdbc테스트() throws ClassNotFoundException, SQLException {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Class.forName("org.mariadb.jdbc.Driver");
 		Connection conn = DriverManager.getConnection(
-				"jdbc:oracle:thin:@localhost:1521:xe"
-				,"scott"
-				,"tiger");
+				"jdbc:mariadb://localhost:3306/t2j"
+				,"root"
+				,"0000");
 	}
 
 	@Test

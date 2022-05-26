@@ -26,7 +26,7 @@ public class WeatherForecastControllerApi {
 	@Autowired
 	TciNotFoundException tciNotFoundException;
 
-	@RequestMapping
+	@RequestMapping(value="/test")
 	public List<VisitJejuDTO> getSightsInfo() {
 		List<VisitJejuDTO> visitJejuLs = new ArrayList<>();
 
@@ -100,7 +100,7 @@ public class WeatherForecastControllerApi {
 		return visitJejuLs;
 	}
 
-	@RequestMapping
+	@RequestMapping(value="/test2")
 	public List getTciGradeInfo() throws ParseException {
 		List<CityTciDTO> cityTciDtoLs = new ArrayList<>();
 

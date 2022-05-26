@@ -9,10 +9,10 @@
 	
 	<!-- DataSource 설정 -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig"> 
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> 
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"></property> 
-		<property name="username" value="scott"></property> 
-		<property name="password" value="tiger"></property> 
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver"></property> 
+		<property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/t2j"></property> 
+		<property name="username" value="root"></property> 
+		<property name="password" value="0000"></property> 
 	</bean> 
 
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close"> 
