@@ -21,40 +21,40 @@
         <div id="writingFormBntWrapper">
             <button type="button" id="writingFormBnt">글쓰기</button>
         </div>
-<%--         <c:forEach items="" var=""> --%>
-	        <div class="article">
-	            <div class="articleTitle">
-	                <p><%-- ${.title} --%></p>
-	            </div>
-	            <div class="userInfoWrapper">
-	                <div class="userInfo">
-	                    <div class="avatar">
-	                        <img src="http://plztrip.com/common/img/default_profile.png" alt="">
-	                    </div>
-	                    <div class="userNameAndhits">
-	                        <div class="writer"><%--{.writer}--%></div>
-	                        <div class="hits">
-	                            <%--{.hits}--%>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="boardPhotoAndTxtArea">
-	                <p class="photo">
-	                    <img src="https://images.unsplash.com/photo-1537519646099-335112f03225?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt="">
-	                </p>
-	                <p class="txt">
-	                   <%--	${.txtTitle } --%>
-	                </p>
-	                <p class="txt">
-	                   <%-- ${.txt } --%>
-	                </p>
-	            </div>
-	            <div class="textAreaBlock">
-	                <textarea title="댓글을 남겨주세요" placeholder="댓글을 남겨주세요" rows="1" style="overflow: hidden visible; overflow-wrap: break-word; height: 62px;"></textarea>
-	                <button class="replySubmit" onclick="">작성</button>
-	            </div>
-	        </div>
+<%--        <c:forEach items="" var=""> --%>
+		        <div class="article">
+		            <div class="articleTitle">
+		                <p><%-- ${.title} --%></p>
+		            </div>
+		            <div class="userInfoWrapper">
+		                <div class="userInfo">
+		                    <div class="avatar">
+		                        <img src="http://plztrip.com/common/img/default_profile.png" alt="">
+		                    </div>
+		                    <div class="userNameAndhits">
+		                        <div class="writer"><%--{.writer}--%></div>
+		                        <div class="hits">
+		                            <%--{.hits}--%>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="boardPhotoAndTxtArea">
+		                <p class="photo">
+		                    <img src="https://images.unsplash.com/photo-1537519646099-335112f03225?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170" alt="">
+		                </p>
+		                <p class="txt">
+		                   <%--	${.txtTitle } --%>
+		                </p>
+		                <p class="txt">
+		                   <%-- ${.txt } --%>
+		                </p>
+		            </div>
+		            <div class="textAreaBlock">
+		                <textarea title="댓글을 남겨주세요" placeholder="댓글을 남겨주세요" rows="1" style="overflow: hidden visible; overflow-wrap: break-word; height: 62px;"></textarea>
+		                <button class="replySubmit" onclick="">작성</button>
+		            </div>
+		        </div>
 <%-- 		</c:forEach> --%>
     </section>
 
