@@ -94,6 +94,13 @@ REFERENCES MEMBER (
 	member_no
 );
 
+
+ALTER TABLE review ADD qna_photo text NULL;
+ALTER TABLE review MODIFY qna_photo TEXT NULL AFTER qna_views;
+ALTER TABLE review DROP COLUMN member_validated;
+ALTER TABLE member ADD member_validated INT(1) NOT NULL CHECK(member_validated IN(0,1));
+
+
 ## member 테이블 쿼리문
 // 테스트용 데이터
 insert into member values (null, "member1", "0000", "Kim", "01012345678", "1", 24, 1 );
