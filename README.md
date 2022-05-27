@@ -104,16 +104,6 @@ insert into member values (null, "member4", "0000", "Jang", "01012345678", "2", 
 // 조회
 SELECT member_no, member_id, member_pw, member_name, name, member_tel, member_gender, member_age, member_validated
 FROM member
-VALUES (
-	null
-	, #{member_id}
-	, #{member_pw}
-	, #{member_name}
-	, #{member_tel}
-	, #{member_gender}
-	, #{member_age}
-	, #{member_validated}
-	)
 
 // 수정
 UPDATE member
