@@ -4,20 +4,20 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tripToJeju.web.domain.weather_forecast.domain.CityTciDTO;
 import com.tripToJeju.web.domain.weather_forecast.domain.VisitJejuDTO;
-import com.tripToJeju.web.domain.weather_forecast.exception.TciNotFoundException;
 import com.tripToJeju.web.global.common.StringFromURL;
 
 /*
@@ -30,8 +30,10 @@ import com.tripToJeju.web.global.common.StringFromURL;
 public class WeatherForecastControllerApi {
 
 	@RequestMapping(value="/getSightsInfo")
-	public List<VisitJejuDTO> getSightsInfo() throws ParseException {
-		List<VisitJejuDTO> visitJejuLs = new ArrayList<>();
+	public Map<String, List<VisitJejuDTO>> getSightsInfo() throws ParseException {
+		Map<String, List<VisitJejuDTO>> resultMap = new HashMap<>();
+		List<VisitJejuDTO> jejuLs = new ArrayList<>();
+		List<VisitJejuDTO> seogwipoLs = new ArrayList<>();
 
 		// 1. Visit Jeju api 서비스를 이용해서 관광지 정보를 가져온다.
 		String endPoint = "http://api.visitjeju.net/vsjApi/contents/searchList";
@@ -91,13 +93,20 @@ public class WeatherForecastControllerApi {
 				dto.setRegion2(region2);
 				dto.setTag(tags);
 
-				visitJejuLs.add(dto);
+				if(dto.getRegion1().equals("제주시")) {
+					jejuLs.add(dto);
+				} else {
+					seogwipoLs.add(dto);
+				}
 			}
+			
+			resultMap.put("jeju", jejuLs);
+			resultMap.put("seogwipo", seogwipoLs);
 		} else if(obj instanceof JSONArray) {
 			JSONArray jsonArr = (JSONArray) obj;
 		}
 
-		return visitJejuLs;
+		return resultMap;
 	}
 
 	@RequestMapping(value="/getTciGradeInfo")

@@ -94,6 +94,11 @@ REFERENCES MEMBER (
 	member_no
 );
 
+ALTER TABLE review ADD qna_photo text NULL;
+ALTER TABLE review MODIFY qna_photo TEXT NULL AFTER qna_views;
+ALTER TABLE review DROP COLUMN member_validated;
+ALTER TABLE member ADD member_validated INT(1) NOT NULL CHECK(member_validated IN(0,1));
+
 ## JavaScript Sliding Paging
 참고 자료: https://jongdai.tistory.com/m/75
 
