@@ -135,10 +135,6 @@ VALUES (
 )
 
 ## reply 테이블 쿼리문
-// 조회
-SELECT reply_no, reply_parent_no, reply_content, reply_date, qna_no, member_no
-FROM reply
-
 // 수정
 UPDATE reply
 SET reply_content = #{reply_content}
