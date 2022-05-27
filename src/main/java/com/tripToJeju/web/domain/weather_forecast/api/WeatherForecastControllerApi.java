@@ -20,14 +20,17 @@ import com.tripToJeju.web.domain.weather_forecast.domain.VisitJejuDTO;
 import com.tripToJeju.web.domain.weather_forecast.exception.TciNotFoundException;
 import com.tripToJeju.web.global.common.StringFromURL;
 
+/*
+ * 	<<Restful>>
+ * get - 조회			post - 추가
+ * put - 수정/업데이트		delete - 삭제
+ */
 @RestController
+@RequestMapping(value="/t2jApi")
 public class WeatherForecastControllerApi {
 
-	@Autowired
-	TciNotFoundException tciNotFoundException;
-
-	@RequestMapping(value="/test")
-	public List<VisitJejuDTO> getSightsInfo() {
+	@RequestMapping(value="/getSightsInfo")
+	public List<VisitJejuDTO> getSightsInfo() throws ParseException {
 		List<VisitJejuDTO> visitJejuLs = new ArrayList<>();
 
 		// 1. Visit Jeju api 서비스를 이용해서 관광지 정보를 가져온다.
@@ -42,65 +45,62 @@ public class WeatherForecastControllerApi {
 		// 2. Visit Jeju api 서비스를 이용해서 가져온 관광지 정보를 Json으로 파싱한다.
 		JSONParser jsonParser = new JSONParser();
 		
-		try {
-			Object obj = jsonParser.parse(result);
+		Object obj = jsonParser.parse(result);
 
-			if(obj instanceof JSONObject) {
-				JSONObject json = (JSONObject) obj;
-				JSONArray jsonArr = (JSONArray) json.get("items");
-				for(int i = 0; i < jsonArr.size(); i++) {
-					json = (JSONObject) jsonArr.get(i);
-					
-					// Json으로 파싱된 정보를 Null 체크하여 변수에 담는다.
-					String category = Optional.ofNullable((JSONObject) json.get("contentscd"))
-							.map(e -> (String) e.get("label")).orElse("");
-					String title = Optional.ofNullable((String) json.get("title")).orElse("");
-					String introduction = Optional.ofNullable((String) json.get("introduction")).orElse("");
-					String addr = Optional.ofNullable((String) json.get("roadaddress")).orElse("");
-					String tel = Optional.ofNullable((String) json.get("phoneno")).orElse("");
-					String photoDesc = Optional.ofNullable((JSONObject) json.get("repPhoto"))
-							.map(e -> (String) e.get("descseo")).orElse("");
-					String thumbnail = Optional.ofNullable((JSONObject) json.get("repPhoto"))
-							.map(e -> (JSONObject) e.get("photoid"))
-							.map(e -> (String) e.get("thumbnailpath")).orElse("");
-					String photoPath = Optional.ofNullable((JSONObject) json.get("repPhoto"))
-							.map(e -> (JSONObject) e.get("photoid"))
-							.map(e -> (String) e.get("imgpath")).orElse("");
-					String region1 = Optional.ofNullable((JSONObject) json.get("region1cd"))
-							.map(e -> (String) e.get("label")).orElse("");
-					String region2 = Optional.ofNullable((JSONObject) json.get("region2cd"))
-							.map(e -> (String) e.get("label")).orElse("");
-					List tags = Arrays.asList(Optional.ofNullable((String) json.get("tag"))
-						.orElse("")
-						.trim().split(","))
-						.stream().limit(4).toList();
-					
-					// 변수에 담긴 정보를 VisitJejuDTO 오브젝트에 Set 한다. 
-					VisitJejuDTO dto = new VisitJejuDTO();
-					dto.setCategory(category);
-					dto.setTitle(title);
-					dto.setIntroduction(introduction);
-					dto.setAddr(addr);
-					dto.setTel(tel);
-					dto.setPhotoDesc(photoDesc);
-					dto.setThumbnail(thumbnail);
-					dto.setPhotoPath(photoPath);
-					dto.setRegion1(region1);
-					dto.setRegion2(region2);
-					dto.setTag(tags);
+		if(obj instanceof JSONObject) {
+			JSONObject json = (JSONObject) obj;
+			JSONArray jsonArr = (JSONArray) json.get("items");
+			for(int i = 0; i < jsonArr.size(); i++) {
+				json = (JSONObject) jsonArr.get(i);
+				
+				// Json으로 파싱된 정보를 Null 체크하여 변수에 담는다.
+				String category = Optional.ofNullable((JSONObject) json.get("contentscd"))
+						.map(e -> (String) e.get("label")).orElse("");
+				String title = Optional.ofNullable((String) json.get("title")).orElse("");
+				String introduction = Optional.ofNullable((String) json.get("introduction")).orElse("");
+				String addr = Optional.ofNullable((String) json.get("roadaddress")).orElse("");
+				String tel = Optional.ofNullable((String) json.get("phoneno")).orElse("");
+				String photoDesc = Optional.ofNullable((JSONObject) json.get("repPhoto"))
+						.map(e -> (String) e.get("descseo")).orElse("");
+				String thumbnail = Optional.ofNullable((JSONObject) json.get("repPhoto"))
+						.map(e -> (JSONObject) e.get("photoid"))
+						.map(e -> (String) e.get("thumbnailpath")).orElse("");
+				String photoPath = Optional.ofNullable((JSONObject) json.get("repPhoto"))
+						.map(e -> (JSONObject) e.get("photoid"))
+						.map(e -> (String) e.get("imgpath")).orElse("");
+				String region1 = Optional.ofNullable((JSONObject) json.get("region1cd"))
+						.map(e -> (String) e.get("label")).orElse("");
+				String region2 = Optional.ofNullable((JSONObject) json.get("region2cd"))
+						.map(e -> (String) e.get("label")).orElse("");
+				List tags = Arrays.asList(Optional.ofNullable((String) json.get("tag"))
+					.orElse("")
+					.trim().split(","))
+					.stream().limit(4).toList();
+				
+				// 변수에 담긴 정보를 VisitJejuDTO 오브젝트에 Set 한다. 
+				VisitJejuDTO dto = new VisitJejuDTO();
+				dto.setCategory(category);
+				dto.setTitle(title);
+				dto.setIntroduction(introduction);
+				dto.setAddr(addr);
+				dto.setTel(tel);
+				dto.setPhotoDesc(photoDesc);
+				dto.setThumbnail(thumbnail);
+				dto.setPhotoPath(photoPath);
+				dto.setRegion1(region1);
+				dto.setRegion2(region2);
+				dto.setTag(tags);
 
-					visitJejuLs.add(dto);
-				}
-			} else if(obj instanceof JSONArray) {
-				JSONArray jsonArr = (JSONArray) obj;
+				visitJejuLs.add(dto);
 			}
-		} catch (ParseException e) {
-			e.printStackTrace();
+		} else if(obj instanceof JSONArray) {
+			JSONArray jsonArr = (JSONArray) obj;
 		}
+
 		return visitJejuLs;
 	}
 
-	@RequestMapping(value="/test2")
+	@RequestMapping(value="/getTciGradeInfo")
 	public List getTciGradeInfo() throws ParseException {
 		List<CityTciDTO> cityTciDtoLs = new ArrayList<>();
 

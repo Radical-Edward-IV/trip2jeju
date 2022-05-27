@@ -10,7 +10,7 @@ import com.tripToJeju.web.domain.weather_forecast.domain.VisitJejuDTO;
 @Controller
 public class WeatherForecastController {
 
-	@RequestMapping(value="/test3")
+	@RequestMapping(value="/test")
 	public String gasdassInfo() {
 		return "review";
 	}
