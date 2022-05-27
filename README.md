@@ -94,6 +94,49 @@ REFERENCES MEMBER (
 	member_no
 );
 
+## member 테이블 쿼리문
+// 테스트용 데이터
+insert into member values (null, "member1", "0000", "Kim", "01012345678", "1", 24, 1 );
+insert into member values (null, "member2", "0000", "Park", "01012345678", "2", 25, 1 );
+insert into member values (null, "member3", "0000", "Choi", "01012345678", "1", 26, 1 );
+insert into member values (null, "member4", "0000", "Jang", "01012345678", "2", 27, 1 );
+
+// 조회
+SELECT member_no, member_id, member_pw, member_name, name, member_tel, member_gender, member_age, member_validated
+FROM member
+VALUES (
+	null
+	, #{member_id}
+	, #{member_pw}
+	, #{member_name}
+	, #{member_tel}
+	, #{member_gender}
+	, #{member_age}
+	, #{member_validated}
+	)
+
+// 수정
+UPDATE member
+SET member_pw=#{member_pw}, member_tel=#{member_tel}
+	WHERE member_no=#{member_no}
+
+// 삭제
+DELETE FROM member
+	WHERE member_no = #{member_no}
+
+// 가입
+INSERT INTO member
+VALUES (
+	null
+	, #{member_id}
+	, #{member_pw}
+	, #{member_name}
+	, #{member_tel}
+	, #{member_gender}
+	, #{member_age}
+	, #{member_validated}
+)
+
 ## JavaScript Sliding Paging
 참고 자료: https://jongdai.tistory.com/m/75
 
