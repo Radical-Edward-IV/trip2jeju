@@ -134,6 +134,32 @@ VALUES (
 	, #{member_validated}
 )
 
+## reply 테이블 쿼리문
+// 조회
+SELECT reply_no, reply_parent_no, reply_content, reply_date, qna_no, member_no
+FROM reply
+
+// 수정
+UPDATE reply
+SET reply_content = #{reply_content}
+	WHERE reply_no = #{reply_no}
+
+// 삭제
+DELETE FROM reply
+	WHERE reply_no = #{reply_no}
+
+// 작성
+INSERT INTO reply
+VALUES (
+	null
+	, #{reply_parent_no}
+	, #{reply_content}
+	, #{reply_date}
+	, #{qna_no}
+	, #{member_no}
+	)
+
+
 ## JavaScript Sliding Paging
 참고 자료: https://jongdai.tistory.com/m/75
 
