@@ -40,12 +40,22 @@
         <div id="popContents">
             <form action="">
                 <input id="find_id_by_Name" type="text" placeholder="이름을 입력하세요."><br>
-                <input id="find_id_by_Tel" type="password" placeholder="비밀번호를 입력하세요."><br>
+                <div id="find_id_by_Tel">
+                    <span>연락처:</span>
+                    <input id="user_Tel" type="text" placeholder="000"> -
+                    <input id="user_Tel" type="text" placeholder="0000"> -
+                    <input id="user_Tel" type="text" placeholder="0000">
+                </div>
                 <input id="find_id" type="button" value="아이디 찾기">
             </form>
             <form action="">
                 <input id="find_pw_by_Id" type="text" placeholder="아이디를 입력하세요."><br>
-                <input id="find_pw_by_Tel" type="password" placeholder="비밀번호를 입력하세요."><br>
+                <div id="find_id_by_Tel">
+                    <span>연락처:</span>
+                    <input id="user_Tel" type="text" placeholder="000"> -
+                    <input id="user_Tel" type="text" placeholder="0000"> -
+                    <input id="user_Tel" type="text" placeholder="0000">
+                </div>
                 <input id="find_pw" type="button" value="비밀번호 찾기">
             </form>
             <button id="closePop">닫기</button>

@@ -138,8 +138,7 @@ input[id^="user_"] {
 
 #findMemInfoPop #popContents {
     display:inline-block;
-    max-width: 900px;
-    min-width: 500px;
+    width: 450px;
     border-radius: 15px;
     padding:20px 30px;
     background:#fff;
@@ -154,6 +153,15 @@ input[id^="user_"] {
     border: 1px solid #ced4da;
     border-radius: 5px;
     padding-left: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+input[id^="user_Tel"] {
+    width: 24.5%;
+}
+
+#find_id_by_Tel span {
     font-size: 1.2rem;
     font-weight: 500;
 }
