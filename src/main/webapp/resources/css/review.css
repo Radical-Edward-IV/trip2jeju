@@ -1,10 +1,16 @@
 @import url(./commonAttribute.css);
 @import url(./headerFooter.css);
 
+
+
+/**************************
+    Start Review Section
+***************************/
 #mainSection {
     padding: 120px 0 40px;
 }
 
+/* Open Writing Form */
 #mainSection #writingFormBntWrapper {
     width: 70%;
     min-width: 800px;
@@ -12,6 +18,7 @@
     text-align: right;
 }
 
+/* Review Contents Section begin */
 #mainSection .article {
     width: 70%;
     min-width: 800px;
@@ -95,6 +102,7 @@
     word-wrap: break-word;
 }
 
+/* Reply Writing Field begin */
 #mainSection .textAreaBlock {
     padding: 16px;
     border: 1px solid rgba(128, 128, 128, 0.2);
@@ -179,6 +187,7 @@
     margin-right: 30px;
 }
 
+/* User Replys Section begin */
 .replys {
     display: flex;
     flex-direction: column;

@@ -29,7 +29,7 @@ import com.tripToJeju.web.global.common.StringFromURL;
 @RequestMapping(value="/t2jApi")
 public class WeatherForecastControllerApi {
 
-	@RequestMapping(value="/getSightsInfo")
+	@RequestMapping(value="/getSightsInfoApi")
 	public Map<String, List<VisitJejuDTO>> getSightsInfo() throws ParseException {
 		Map<String, List<VisitJejuDTO>> resultMap = new HashMap<>();
 		List<VisitJejuDTO> jejuLs = new ArrayList<>();
@@ -93,7 +93,7 @@ public class WeatherForecastControllerApi {
 				dto.setRegion2(region2);
 				dto.setTag(tags);
 
-				if(dto.getRegion1().equals("제주시")) {
+				if(dto.getRegion1().equals("서귀포시")) {
 					jejuLs.add(dto);
 				} else {
 					seogwipoLs.add(dto);
@@ -105,11 +105,10 @@ public class WeatherForecastControllerApi {
 		} else if(obj instanceof JSONArray) {
 			JSONArray jsonArr = (JSONArray) obj;
 		}
-
 		return resultMap;
 	}
 
-	@RequestMapping(value="/getTciGradeInfo")
+	@RequestMapping(value="/getTciGradeInfoApi")
 	public List getTciGradeInfo() throws ParseException {
 		List<CityTciDTO> cityTciDtoLs = new ArrayList<>();
 
@@ -132,7 +131,6 @@ public class WeatherForecastControllerApi {
 		url.append("&CURRENT_DATE=" + currentDate);
 		url.append("&DAY=" + day);
 		url.append("&CITY_AREA_ID=" + cityAreaId);
-		System.out.println(url.toString());
 		String result = StringFromURL.getStringFromURL(url.toString());
 
 		// 2. 공공데이터 api 서비스를 이용해서 가져온 관광지 정보를 Json으로 파싱한다.

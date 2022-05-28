@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/login.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/javascript/login.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,23 @@
                 <input id="login" type="button" value="로그인">
             </form>
             <button id="join" type="button" onclick="location.href='./join.html'">회원가입</button>
-            <button id="fineMemInfo" type="button" onclick="location.href='#'">회원정보 찾기</button>
+            <button id="fineMemInfo" type="button">회원정보 찾기</button>
+        </div>
+    </div>
+    <!-- Pop-up -->
+    <div id="findMemInfoPop" style="display: none;">
+        <div id="popContents">
+            <form action="">
+                <input id="find_id_by_Name" type="text" placeholder="이름을 입력하세요."><br>
+                <input id="find_id_by_Tel" type="password" placeholder="비밀번호를 입력하세요."><br>
+                <input id="find_id" type="button" value="아이디 찾기">
+            </form>
+            <form action="">
+                <input id="find_pw_by_Id" type="text" placeholder="아이디를 입력하세요."><br>
+                <input id="find_pw_by_Tel" type="password" placeholder="비밀번호를 입력하세요."><br>
+                <input id="find_pw" type="button" value="비밀번호 찾기">
+            </form>
+            <button id="closePop">닫기</button>
         </div>
     </div>
 </body>
