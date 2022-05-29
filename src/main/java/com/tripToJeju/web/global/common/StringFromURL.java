@@ -25,9 +25,9 @@ public class StringFromURL {
 
 			BufferedReader br;
 			if(conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
-	            br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+	            br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
 	        } else {
-	            br = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+	            br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), "UTF-8"));
 	        }
 
 			String line;
